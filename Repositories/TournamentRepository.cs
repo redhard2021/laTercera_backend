@@ -3,19 +3,19 @@ using laTercera.Repositories.IRepositories;
 
 namespace laTercera.Repositories;
 
-public class FieldRepository: Repository<Field>, IFieldRepository
+public class TournamentRepository: Repository<Tournament>, ITournamentRepository
 {
     private readonly ApplicationDbContext db;
 
 
-    public FieldRepository(ApplicationDbContext dbContext) : base(dbContext)
+    public TournamentRepository(ApplicationDbContext dbContext) : base(dbContext)
     {
         db = dbContext;
     }
 
-    public async Task<Field> Update(Field entity)
+    public async Task<Tournament> Update(Tournament entity)
     {
-        db.Field?.Update(entity);
+        db.Tournament?.Update(entity);
         await db.SaveChangesAsync();
         return entity;
     }

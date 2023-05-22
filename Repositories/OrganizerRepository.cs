@@ -3,19 +3,19 @@ using laTercera.Repositories.IRepositories;
 
 namespace laTercera.Repositories;
 
-public class FieldRepository: Repository<Field>, IFieldRepository
+public class OrganizerRepository: Repository<Organizer>, IOrganizerRepository
 {
     private readonly ApplicationDbContext db;
 
 
-    public FieldRepository(ApplicationDbContext dbContext) : base(dbContext)
+    public OrganizerRepository(ApplicationDbContext dbContext) : base(dbContext)
     {
         db = dbContext;
     }
-
-    public async Task<Field> Update(Field entity)
+    
+    public async Task<Organizer> Update(Organizer entity)
     {
-        db.Field?.Update(entity);
+        db.Organizer?.Update(entity);
         await db.SaveChangesAsync();
         return entity;
     }

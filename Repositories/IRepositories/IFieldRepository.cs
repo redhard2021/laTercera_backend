@@ -2,7 +2,7 @@
 
 namespace laTercera.Repositories.IRepositories;
 
-public interface IFieldRepository : IRepository<Models.Field>
+public interface IFieldRepository : IRepository<Field>
 {
-    Task<Models.Field> Update(Models.Field entity);
+    Task<Field> Update(Field entity);
 }

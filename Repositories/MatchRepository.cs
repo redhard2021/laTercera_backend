@@ -3,19 +3,19 @@ using laTercera.Repositories.IRepositories;
 
 namespace laTercera.Repositories;
 
-public class FieldRepository: Repository<Field>, IFieldRepository
+public class MatchRepository: Repository<Match>, IMatchRepository
 {
     private readonly ApplicationDbContext db;
 
 
-    public FieldRepository(ApplicationDbContext dbContext) : base(dbContext)
+    public MatchRepository(ApplicationDbContext dbContext) : base(dbContext)
     {
         db = dbContext;
     }
-
-    public async Task<Field> Update(Field entity)
+    
+    public async Task<Match> Update(Match entity)
     {
-        db.Field?.Update(entity);
+        db.Match?.Update(entity);
         await db.SaveChangesAsync();
         return entity;
     }

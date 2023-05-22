@@ -9,7 +9,7 @@ public class ApplicationDbContext: DbContext
     {
     }
     
-    public DbSet<Models.Field>? Field { get; set; }
+    public DbSet<Field>? Field { get; set; }
     public DbSet<Tournament>? Tournament { get; set; }
     public DbSet<Match>? Match { get; set; }
     public DbSet<Organizer>? Organizer { get; set; }
